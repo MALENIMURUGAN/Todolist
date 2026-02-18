@@ -1,0 +1,200 @@
+:root {
+  --bg:#fdf6f0;
+  --card:#ffffff;
+  --text:#4b2e2e;
+  --accent:#ff7a59;
+}
+
+body.dark{
+  --bg:#1e1f2f;
+  --card:#2c2f4a;
+  --text:#ffffff;
+}
+
+body{
+  margin:0;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  transition:0.3s;
+}
+
+.pinterest-board{
+  max-width:500px;
+  margin:auto;
+  padding:20px;
+}
+
+.header-pin h1{
+  font-size:20px;
+}
+
+.badge-pin{
+  font-size:14px;
+  margin-top:5px;
+}
+
+.search-pin{
+  background:var(--card);
+  padding:10px;
+  border-radius:20px;
+  display:flex;
+  gap:10px;
+  margin-top:15px;
+}
+
+.search-pin input{
+  border:none;
+  outline:none;
+  flex:1;
+  background:transparent;
+}
+
+.filter-pills{
+  display:flex;
+  gap:10px;
+  margin-top:15px;
+}
+
+.pill{
+  padding:6px 14px;
+  border-radius:20px;
+  background:#eee;
+  cursor:pointer;
+}
+
+.pill.active{
+  background:var(--accent);
+  color:white;
+}
+
+.task-list{
+  margin-top:20px;
+}
+
+.task{
+  background:var(--card);
+  padding:15px;
+  border-radius:18px;
+  margin-bottom:15px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 4px 12px rgba(0,0,0,0.05);
+  transition:0.3s;
+}
+
+.task.done{
+  opacity:0.6;
+  text-decoration:line-through;
+}
+
+.add-task-btn{
+  position:fixed;
+  bottom:80px;
+  right:20px;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  border:none;
+  background:var(--accent);
+  color:white;
+  font-size:20px;
+  cursor:pointer;
+}
+
+.bottom-toggle{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.switch{
+  position:relative;
+  display:inline-block;
+  width:50px;
+  height:24px;
+}
+
+.switch input{
+  opacity:0;
+}
+
+.slider{
+  position:absolute;
+  cursor:pointer;
+  inset:0;
+  background:#ccc;
+  border-radius:20px;
+}
+
+.slider:before{
+  content:"";
+  position:absolute;
+  height:18px;
+  width:18px;
+  left:3px;
+  bottom:3px;
+  background:white;
+  border-radius:50%;
+  transition:0.3s;
+}
+
+input:checked + .slider{
+  background:var(--accent);
+}
+
+input:checked + .slider:before{
+  transform:translateX(26px);
+}
+
+/* Modal */
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.4);
+  justify-content:center;
+  align-items:center;
+}
+
+.modal-content{
+  background:var(--card);
+  padding:20px;
+  border-radius:20px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  width:80%;
+}
+
+.modal-content input{
+  padding:10px;
+  border-radius:10px;
+  border:1px solid #ddd;
+}
+
+.modal-content button{
+  padding:10px;
+  border:none;
+  border-radius:10px;
+  background:var(--accent);
+  color:white;
+  cursor:pointer;
+}
+
+/* Notification */
+
+.notification{
+  position:fixed;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
+  background:var(--card);
+  padding:15px;
+  border-radius:15px;
+  display:none;
+  box-shadow:0 6px 20px rgba(0,0,0,0.2);
+}
